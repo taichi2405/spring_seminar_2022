@@ -1,0 +1,122 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "python2.ipynb",
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ER19055 中村泰智"
+      ],
+      "metadata": {
+        "id": "oxia3JGgQfYF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = ['m', 'c', 'i', 'e', 'p', 'r', 'e', 't', 'o', ' ', 'o', 'o', 'i', 's', 'g', 'o', 'p']\n",
+        "b = ['a', 'h', 'n', ' ', 'e', 'c', 'p', 'i', 'n', 'r', 'b', 't', 'c', '-', 'r', 'u', '!']\n",
+        "\n",
+        "text=[]\n",
+        "for n, m in zip(a, b):\n",
+        "  text.extend([n,m])\n",
+        "\n",
+        "for ch in text:\n",
+        "  print(ch, end=\"\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VUyod9peu4Cw",
+        "outputId": "9c464659-be55-4fa0-934f-59ebd003031d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "machine perception robotics-group!"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G9dLTH3HpqtD",
+        "outputId": "f7988e34-3eb7-46c1-c1c0-a0e057e41253"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.42857142857142855"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 4
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "pred = np.array([1, 3, 1, 2, 5, 3, 0])\n",
+        "targets = np.array([0, 3, 2, 1, 5, 0, 0])\n",
+        "\n",
+        "acc=np.sum(pred-targets==0)/ len(pred)\n",
+        "\n",
+        "acc"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "X = np.random.rand(20, 15)\n",
+        "np.mean(X)\n",
+        "#0.4768904707907407\n",
+        "np.std(X)\n",
+        "#0.2822424247568131"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iGQ_RIL7u2Aw",
+        "outputId": "ef508bcd-f4e7-4909-c6e1-a5e61ac6f0dd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.4768904707907407"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 22
+        }
+      ]
+    }
+  ]
+}
